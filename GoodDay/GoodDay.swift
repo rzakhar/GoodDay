@@ -11,7 +11,7 @@ import os
 @main
 struct GoodDay: App {
     
-    /// An object that manages the library of video content.
+    /// An object that manages the library of space content.
     @State private var library = SpaceLibrary()
     
     var body: some Scene {
@@ -26,7 +26,7 @@ struct GoodDay: App {
             #endif
         }
         #if os(visionOS)
-        // Defines an immersive space to present a destination in which to watch the video.
+        // Defines an immersive space to present a destination in which to watch the space.
         ImmersiveSpace(for: Destination.self) { $destination in
             if let destination {
                 DestinationView(destination)

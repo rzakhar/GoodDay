@@ -2,16 +2,16 @@
 See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
-A view that displays the list of videos the library contains.
+A view that displays the list of spaces the library contains.
 */
 import SwiftUI
 
 /// A view that presents the app's content library.
 ///
 /// This view provides the app's main user interface. It displays two
-/// horizontally scrolling rows of videos. The top row displays full-sized
-/// cards that represent the Featured videos in the app. The bottom row
-/// displays videos that the user adds to their Up Next queue.
+/// horizontally scrolling rows of spaces. The top row displays full-sized
+/// cards that represent the Featured spaces in the app. The bottom row
+/// displays spaces that the user adds to their Favorites queue.
 ///
 struct LibraryView: View {
     
@@ -35,7 +35,7 @@ struct LibraryView: View {
             // Wrap the content in a vertically scrolling view.
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: verticalPadding) {
-                    // Displays the Destination Video logo image.
+                    // Displays the Good Day logo image.
                     Image("dv_logo")
                         .resizable()
                         .scaledToFit()
@@ -44,22 +44,22 @@ struct LibraryView: View {
                         .frame(height: logoHeight)
                         .accessibilityHidden(true)
                     
-                    // Displays a horizontally scrolling list of Featured videos.
+                    // Displays a horizontally scrolling list of Featured spaces.
                     SpaceListView(title: "Featured",
-                                  videos: library.videos,
+                                  spaces: library.spaces,
                                   cardStyle: .full,
                                   cardSpacing: horizontalSpacing)
                     
-                    // Displays a horizontally scrolling list of videos in the user's Up Next queue.
-                    SpaceListView(title: "Up Next",
-                                  videos: library.upNext,
-                                  cardStyle: .upNext,
+                    // Displays a horizontally scrolling list of spaces in the user's Favorites queue.
+                    SpaceListView(title: "Favorites",
+                                  spaces: library.vaforites,
+                                  cardStyle: .vaforites,
                                   cardSpacing: horizontalSpacing)
                 }
                 .padding([.top, .bottom], verticalPadding)
-                .navigationDestination(for: Space.self) { video in
-                    DetailView(video: video)
-                        .navigationTitle(video.title)
+                .navigationDestination(for: Space.self) { space in
+                    DetailView(space: space)
+                        .navigationTitle(space.title)
                         .navigationBarHidden(isTV)
                 }
             }

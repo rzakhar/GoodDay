@@ -9,7 +9,7 @@ import SwiftUI
 import RealityKit
 import Combine
 
-/// A view that displays a 360 degree scene in which to watch video.
+/// A view that displays a 360 degree scene in which to watch space.
 struct DestinationView: View {
     
     @State private var destination: Destination
@@ -32,8 +32,8 @@ struct DestinationView: View {
                 destinationChanged = false
             }
         }
-        // Handle the case where the app is already playing video in a destination and:
-        // 1. The user opens the Up Next tab and navigates to a new item, or
+        // Handle the case where the app is already playing space in a destination and:
+        // 1. The user opens the Favorites tab and navigates to a new item, or
         // 2. The user presses the "Play Next" button in the player UI.
         .transition(.opacity)
     }

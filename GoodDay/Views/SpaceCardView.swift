@@ -2,25 +2,25 @@
 See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
-A view that represents a video in the library.
+A view that represents a space in the library.
 */
 import SwiftUI
 
-/// Constants that represent the supported styles for video cards.
+/// Constants that represent the supported styles for space cards.
 enum SpaceCardView {
     
-    /// A full video card style.
+    /// A full space card style.
     ///
-    /// This style presents a poster image on top and information about the video
-    /// below, including video description and genres.
+    /// This style presents a poster image on top and information about the space
+    /// below, including space description and genres.
     case full
 
-    /// A style for cards in the Up Next list.
+    /// A style for cards in the Favorites list.
     ///
     /// This style presents a medium-sized poster image on top and a title string below.
-    case upNext
+    case vaforites
     
-    /// A compact video card style.
+    /// A compact space card style.
     ///
     /// This style presents a compact-sized poster image on top and a title string below.
     case compact
@@ -34,32 +34,32 @@ enum SpaceCardView {
             20.0
             #endif
             
-        case .upNext: 12.0
+        case .vaforites: 12.0
         case .compact: 10.0
         }
     }
 
 }
 
-/// A view that represents a video in the library.
+/// A view that represents a space in the library.
 ///
-/// A user can select a video card to view the video details.
-struct VideoCardView: View {
+/// A user can select a space card to view the space details.
+struct spaceCardView: View {
     
-    let video: Space
+    let space: Space
     let style: SpaceCardView
     let cornerRadius = 20.0
     
-    /// Creates a video card view with a video and an optional style.
+    /// Creates a space card view with a space and an optional style.
     ///
     /// The default style is `.full`.
-    init(video: Space, style: SpaceCardView = .full) {
-        self.video = video
+    init(space: Space, style: SpaceCardView = .full) {
+        self.space = space
         self.style = style
     }
     
     var image: some View {
-        Image(video.landscapeImageName)
+        Image(space.landscapeImageName)
             .resizable()
             .scaledToFill()
     }
@@ -69,30 +69,30 @@ struct VideoCardView: View {
         case .compact:
             posterCard
                 .frame(width: valueFor(iOS: 0, tvOS: 400, visionOS: 200))
-        case .upNext:
+        case .vaforites:
             posterCard
                 .frame(width: valueFor(iOS: 250, tvOS: 500, visionOS: 360))
         case .full:
             VStack {
                 image
                 VStack(alignment: .leading) {
-                    InfoLineView(year: video.info.releaseYear,
-                                 rating: video.info.contentRating,
-                                 duration: video.info.duration)
+                    InfoLineView(year: space.info.releaseYear,
+                                 rating: space.info.contentRating,
+                                 duration: space.info.duration)
                     .foregroundStyle(.secondary)
                     .padding(.top, -10)
                     //.padding(.bottom, 3)
-                    Text(video.title)
+                    Text(space.title)
                         .font(isTV ? .title3 : .title)
                         //.padding(.bottom, 2)
-                    Text(video.description)
+                    Text(space.description)
                     #if os(tvOS)
                         .font(.callout)
                     #endif
                         .lineLimit(2)
                     Spacer()
                     HStack {
-                        GenreView(genres: video.info.genres)
+                        GenreView(genres: space.info.genres)
                     }
                 }
                 .padding(20)
@@ -116,7 +116,7 @@ struct VideoCardView: View {
             image
             // Material gradient
             GradientView(style: .ultraThinMaterial, height: 90, startPoint: .top)
-            Text(video.title)
+            Text(space.title)
                 .font(.caption.bold())
                 .padding()
         }
@@ -125,7 +125,7 @@ struct VideoCardView: View {
         VStack {
             image
                 .cornerRadius(style.cornerRadius)
-            Text(video.title)
+            Text(space.title)
                 .font(isVision ? .title3 : .headline)
                 .lineLimit(1)
         }

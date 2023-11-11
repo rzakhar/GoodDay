@@ -35,7 +35,7 @@
 		C417BE472A2EDFE700C8B9CA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C41945862A2D9C9C00D0E9BC /* WideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideDetailView.swift; sourceTree = "<group>"; };
 		C4280E342A16D578005475E1 /* VideoExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoExtensions.swift; sourceTree = "<group>"; };
-		C4462E7129AAAB2E00E3C854 /* Destination Video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Destination Video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4462E7129AAAB2E00E3C854 /* Good Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C455357629EEFE3100A750E8 /* DestinationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationView.swift; sourceTree = "<group>"; };
 		C455357729EEFE3100A750E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C455357D29EEFE3100A750E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		C455358729EEFE3100A750E8 /* GoodDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodDay.swift; sourceTree = "<group>"; };
 		C455358929EEFE3100A750E8 /* SpaceLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceLibrary.swift; sourceTree = "<group>"; };
 		C455358B29EEFE3100A750E8 /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
-		C455358D29EEFE3100A750E8 /* DestinationVideo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = DestinationVideo.entitlements; sourceTree = "<group>"; };
+		C455358D29EEFE3100A750E8 /* GoodDay.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GoodDay.entitlements; sourceTree = "<group>"; };
 		C455359029EEFE3100A750E8 /* SpaceCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCardView.swift; sourceTree = "<group>"; };
 		C455359129EEFE3100A750E8 /* SpaceInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceInfoView.swift; sourceTree = "<group>"; };
 		C455359429EEFE3100A750E8 /* LibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3D967E9B031C16A162B2B54A /* README.md */,
-				C455357329EEFE3100A750E8 /* DestinationVideo */,
+				C455357329EEFE3100A750E8 /* GoodDay */,
 				C4462E7229AAAB2E00E3C854 /* Products */,
 				C41FF8F029B83A4000ACA6E2 /* Frameworks */,
 				7CCD8CB6CDAE2F1883816AE4 /* Configuration */,
@@ -116,12 +116,12 @@
 		C4462E7229AAAB2E00E3C854 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4462E7129AAAB2E00E3C854 /* Destination Video.app */,
+				C4462E7129AAAB2E00E3C854 /* Good Day.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C455357329EEFE3100A750E8 /* DestinationVideo */ = {
+		C455357329EEFE3100A750E8 /* GoodDay */ = {
 			isa = PBXGroup;
 			children = (
 				C455358729EEFE3100A750E8 /* GoodDay.swift */,
@@ -130,11 +130,11 @@
 				C455358829EEFE3100A750E8 /* Model */,
 				C455357E29EEFE3100A750E8 /* Extensions */,
 				C4274E1E2A184D080005650A /* Resources */,
-				C455358D29EEFE3100A750E8 /* DestinationVideo.entitlements */,
+				C455358D29EEFE3100A750E8 /* GoodDay.entitlements */,
 				C455359729EEFE3100A750E8 /* Info.plist */,
 				C455357C29EEFE3100A750E8 /* Preview Content */,
 			);
-			path = DestinationVideo;
+			path = GoodDay;
 			sourceTree = "<group>";
 		};
 		C455357C29EEFE3100A750E8 /* Preview Content */ = {
@@ -185,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C4462E7029AAAB2E00E3C854 /* DestinationVideo */ = {
+		C4462E7029AAAB2E00E3C854 /* GoodDay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C4462E8029AAAB2F00E3C854 /* Build configuration list for PBXNativeTarget "DestinationVideo" */;
+			buildConfigurationList = C4462E8029AAAB2F00E3C854 /* Build configuration list for PBXNativeTarget "GoodDay" */;
 			buildPhases = (
 				C4462E6D29AAAB2E00E3C854 /* Sources */,
 				C4462E6E29AAAB2E00E3C854 /* Frameworks */,
@@ -197,9 +197,9 @@
 			);
 			dependencies = (
 			);
-			name = DestinationVideo;
+			name = GoodDay;
 			productName = DestinationTheatre;
-			productReference = C4462E7129AAAB2E00E3C854 /* Destination Video.app */;
+			productReference = C4462E7129AAAB2E00E3C854 /* Good Day.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C4462E6C29AAAB2E00E3C854 /* Build configuration list for PBXProject "DestinationVideo" */;
+			buildConfigurationList = C4462E6C29AAAB2E00E3C854 /* Build configuration list for PBXProject "GoodDay" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -231,7 +231,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C4462E7029AAAB2E00E3C854 /* DestinationVideo */,
+				C4462E7029AAAB2E00E3C854 /* GoodDay */,
 			);
 		};
 /* End PBXProject section */
@@ -397,18 +397,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = DestinationVideo/DestinationVideo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GoodDay/GoodDay.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DestinationVideo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GoodDay/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DestinationVideo/Info.plist;
+				INFOPLIST_FILE = GoodDay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Good Day";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -428,8 +428,8 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.DestinationVideo${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = "Destination Video";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrl-pain-delete.GoodDay${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_NAME = "Good Day";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -449,18 +449,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = DestinationVideo/DestinationVideo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GoodDay/GoodDay.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DestinationVideo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GoodDay/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DestinationVideo/Info.plist;
+				INFOPLIST_FILE = GoodDay/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Good Day";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -480,8 +480,8 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.DestinationVideo${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = "Destination Video";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ctrl-pain-delete.GoodDay${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_NAME = "Good Day";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -497,7 +497,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C4462E6C29AAAB2E00E3C854 /* Build configuration list for PBXProject "DestinationVideo" */ = {
+		C4462E6C29AAAB2E00E3C854 /* Build configuration list for PBXProject "GoodDay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4462E7E29AAAB2F00E3C854 /* Debug */,
@@ -506,7 +506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4462E8029AAAB2F00E3C854 /* Build configuration list for PBXNativeTarget "DestinationVideo" */ = {
+		C4462E8029AAAB2F00E3C854 /* Build configuration list for PBXNativeTarget "GoodDay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4462E8129AAAB2F00E3C854 /* Debug */,

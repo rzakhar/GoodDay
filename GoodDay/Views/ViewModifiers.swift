@@ -39,10 +39,10 @@ private struct ImmersiveSpacePresentationModifier: ViewModifier {
                         }
                     } else {
                         guard !isPresentingSpace else { return }
-                        // The navigationPath has one video, or is empty.
-                        guard let video = navigationPath.first else { fatalError() }
+                        // The navigationPath has one space, or is empty.
+                        guard let space = navigationPath.first else { fatalError() }
                         // Await the request to open the destination and set the state accordingly.
-                        switch await openSpace(value: video.destination) {
+                        switch await openSpace(value: space.destination) {
                         case .opened: isPresentingSpace = true
                         default: isPresentingSpace = false
                         }

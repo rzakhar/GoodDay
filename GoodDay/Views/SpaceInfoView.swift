@@ -2,38 +2,38 @@
 See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
-A view that displays information about a video like its title, actors, and rating.
+A view that displays information about a space like its title, actors, and rating.
 */
 import SwiftUI
 
 struct SpaceInfoView: View {
-    let video: Space
+    let space: Space
     var body: some View {
         VStack(alignment: .leading) {
-            Text(video.title)
+            Text(space.title)
                 .font(isVision ? .title : .title2)
                 .padding(.bottom, 4)
-            InfoLineView(year: video.info.releaseYear,
-                         rating: video.info.contentRating,
-                         duration: video.info.duration)
+            InfoLineView(year: space.info.releaseYear,
+                         rating: space.info.contentRating,
+                         duration: space.info.duration)
                 .padding([.bottom], 4)
-            GenreView(genres: video.info.genres)
+            GenreView(genres: space.info.genres)
                 .padding(.bottom, 4)
-            RoleView(role: String(localized: "Stars"), people: video.info.stars)
+            RoleView(role: String(localized: "Stars"), people: space.info.stars)
                 .padding(.top, 1)
-            RoleView(role: String(localized: "Director"), people: video.info.directors)
+            RoleView(role: String(localized: "Director"), people: space.info.directors)
                 .padding(.top, 1)
-            RoleView(role: String(localized: "Writers"), people: video.info.writers)
+            RoleView(role: String(localized: "Writers"), people: space.info.writers)
                 .padding(.top, 1)
                 .padding(.bottom, 12)
-            Text(video.description)
+            Text(space.description)
                 .font(.headline)
                 .padding(.bottom, 12)
         }
     }
 }
 
-/// A view that displays a horizontal list of the video's year, rating, and duration.
+/// A view that displays a horizontal list of the space's year, rating, and duration.
 struct InfoLineView: View {
     let year: String
     let rating: String
@@ -46,7 +46,7 @@ struct InfoLineView: View {
     }
 }
 
-/// A view that displays a comma-separated list of genres for a video.
+/// A view that displays a comma-separated list of genres for a space.
 struct GenreView: View {
     let genres: [String]
     var body: some View {
@@ -85,7 +85,7 @@ struct RoleView: View {
 
 #if os(visionOS)
 #Preview {
-    SpaceInfoView(video: .preview)
+    SpaceInfoView(space: .preview)
         .padding()
         .frame(width: 500, height: 500)
         .background(.gray)

@@ -9,13 +9,13 @@ import Foundation
 
 extension Space {
     static var preview: Space {
-        SpaceLibrary().videos[0]
+        SpaceLibrary().spaces[0]
     }
 }
 
 extension Array {
     static var all: [Space] {
-        SpaceLibrary().videos
+        SpaceLibrary().spaces
     }
 }
 

@@ -2,40 +2,40 @@
 See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
-A view that presents a horizontal view of the video details.
+A view that presents a horizontal view of the space details.
 */
 
 import SwiftUI
 
-// The leading side of view displays a trailer view, and the trailing side displays video information and action controls.
+// The leading side of view displays a trailer view, and the trailing side displays space information and action controls.
 struct DetailView: View {
     
-    let video: Space
+    let space: Space
     @Environment(SpaceLibrary.self) private var library
     
     let margins = 30.0
     
     var body: some View {
         HStack(alignment: .top, spacing: margins) {
-            // A view that plays video in an inline presentation.
+            // A view that plays space in an inline presentation.
             Color.red
                 .aspectRatio(16 / 9, contentMode: .fit)
                 .frame(width: 620)
                 .cornerRadius(20)
             
             VStack(alignment: .leading) {
-                // Displays video details.
-                SpaceInfoView(video: video)
+                // Displays space details.
+                SpaceInfoView(space: space)
                 // Action controls.
                 HStack {
                     Group {
                         Button {
-                            // Calling this method toggles the video's inclusion state in the Up Next queue.
-                            library.toggleUpNextState(for: video)
+                            // Calling this method toggles the space's inclusion state in the Favorites queue.
+                            library.toggleFavoriteState(for: space)
                         } label: {
-                            let isUpNext = library.isVideoInUpNext(video)
-                            Label(isUpNext ? "In Up Next" : "Add to Up Next",
-                                  systemImage: isUpNext ? "checkmark" : "plus")
+                            let isFavorite = library.isspaceInFavorite(space)
+                            Label(isFavorite ? "In Favorites" : "Add to Favorites",
+                                  systemImage: isFavorite ? "checkmark" : "plus")
                             .frame(maxWidth: .infinity)
                         }
                     }
@@ -51,7 +51,7 @@ struct DetailView: View {
 
 #Preview {
     NavigationStack {
-        DetailView(video: .preview)
+        DetailView(space: .preview)
             .environment(SpaceLibrary())
     }
 }
