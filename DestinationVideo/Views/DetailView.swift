@@ -10,33 +10,25 @@ import SwiftUI
 // The leading side of view displays a trailer view, and the trailing side displays video information and action controls.
 struct DetailView: View {
     
-    let video: Video
-    @Environment(PlayerModel.self) private var player
-    @Environment(VideoLibrary.self) private var library
+    let video: Space
+    @Environment(SpaceLibrary.self) private var library
     
     let margins = 30.0
     
     var body: some View {
         HStack(alignment: .top, spacing: margins) {
             // A view that plays video in an inline presentation.
-            TrailerView(video: video)
+            Color.red
                 .aspectRatio(16 / 9, contentMode: .fit)
                 .frame(width: 620)
                 .cornerRadius(20)
             
             VStack(alignment: .leading) {
                 // Displays video details.
-                VideoInfoView(video: video)
+                SpaceInfoView(video: video)
                 // Action controls.
                 HStack {
                     Group {
-                        Button {
-                            /// Load the media item for full-window presentation.
-                            player.loadVideo(video, presentation: .fullWindow)
-                        } label: {
-                            Label("Play Video", systemImage: "play.fill")
-                                .frame(maxWidth: .infinity)
-                        }
                         Button {
                             // Calling this method toggles the video's inclusion state in the Up Next queue.
                             library.toggleUpNextState(for: video)
@@ -60,7 +52,6 @@ struct DetailView: View {
 #Preview {
     NavigationStack {
         DetailView(video: .preview)
-            .environment(PlayerModel())
-            .environment(VideoLibrary())
+            .environment(SpaceLibrary())
     }
 }

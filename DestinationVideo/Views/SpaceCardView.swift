@@ -7,7 +7,7 @@ A view that represents a video in the library.
 import SwiftUI
 
 /// Constants that represent the supported styles for video cards.
-enum VideoCardStyle {
+enum SpaceCardView {
     
     /// A full video card style.
     ///
@@ -46,14 +46,14 @@ enum VideoCardStyle {
 /// A user can select a video card to view the video details.
 struct VideoCardView: View {
     
-    let video: Video
-    let style: VideoCardStyle
+    let video: Space
+    let style: SpaceCardView
     let cornerRadius = 20.0
     
     /// Creates a video card view with a video and an optional style.
     ///
     /// The default style is `.full`.
-    init(video: Video, style: VideoCardStyle = .full) {
+    init(video: Space, style: SpaceCardView = .full) {
         self.video = video
         self.style = style
     }

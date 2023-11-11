@@ -8,7 +8,7 @@ An object that represents a video in the app's library.
 import Foundation
 import UIKit
 
-struct Video: Identifiable, Hashable, Codable {
+struct Space: Identifiable, Hashable, Codable {
     
     /// The unique identifier of the item.
     let id: Int

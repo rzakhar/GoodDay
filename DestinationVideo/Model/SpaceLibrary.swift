@@ -13,10 +13,10 @@ import Observation
 ///
 /// The app puts an instance of this class into the environment so it can retrieve and
 /// update the state of video content in the library.
-@Observable class VideoLibrary {
+@Observable class SpaceLibrary {
     
-    private(set) var videos = [Video]()
-    private(set) var upNext = [Video]()
+    private(set) var videos = [Space]()
+    private(set) var upNext = [Space]()
     
     // A URL within the user's Documents directory to which to write their Up Next entries.
     private let upNextURL = URL.documentsDirectory.appendingPathComponent("UpNext.json")
@@ -30,7 +30,7 @@ import Observation
     
     /// Toggles whether the video exists in the Up Next queue.
     /// - Parameter video: the video to update
-    func toggleUpNextState(for video: Video) {
+    func toggleUpNextState(for video: Space) {
         if !upNext.contains(video) {
             // Insert the video at the beginning of the list.
             upNext.insert(video, at: 0)
@@ -45,19 +45,19 @@ import Observation
     /// Returns a Boolean value that indicates whether the video exits in the Up Next list.
     /// - Parameter video: the video to test,
     /// - Returns: `true` if the item is in the Up Next list; otherwise, `false`.
-    func isVideoInUpNext(_ video: Video) -> Bool {
+    func isVideoInUpNext(_ video: Space) -> Bool {
         upNext.contains(video)
     }
     
     /// Finds the items to display in the video player's Up Next list.
-    func findUpNext(for video: Video) -> [Video] {
+    func findUpNext(for video: Space) -> [Space] {
         upNext.filter { $0.id != video.id }
     }
     
     /// Finds the next video in the Up Next list after the current video.
     /// - Parameter video: the current video
     /// - Returns: the next video, or `nil` if none exists.
-    func findVideoInUpNext(after video: Video) -> Video? {
+    func findVideoInUpNext(after video: Space) -> Space? {
         switch upNext.count {
         case 0:
             // Up Next is empty. Return nil.
@@ -81,8 +81,8 @@ import Observation
     }
     
     /// Loads the video content for the app.
-    private func loadVideos() -> [Video] {
-        let filename = "Videos.json"
+    private func loadVideos() -> [Space] {
+        let filename = "Spaces.json"
         guard let url = Bundle.main.url(forResource: filename, withExtension: nil) else {
             fatalError("Couldn't find \(filename) in main bundle.")
         }
@@ -90,7 +90,7 @@ import Observation
     }
     
     /// Loads the user's list of videos in their Up Next list.
-    private func loadUpNextVideos(`default` defaultVideos: [Video]) -> [Video] {
+    private func loadUpNextVideos(`default` defaultVideos: [Space]) -> [Space] {
         // If this file doesn't exist, create it.
         if !FileManager.default.fileExists(atPath: upNextURL.path) {
             // Create an initial file with a default value.

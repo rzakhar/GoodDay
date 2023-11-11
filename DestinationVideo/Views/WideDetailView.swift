@@ -12,22 +12,13 @@ import SwiftUI
 /// The detail view in iPadOS and tvOS use this view to display the video information.
 struct WideDetailView: View {
     
-    let video: Video
-    let player: PlayerModel
-    let library: VideoLibrary
+    let video: Space
+    let library: SpaceLibrary
     
     var body: some View {
         // Arrange the content in a horizontal layout.
         HStack(alignment: .top, spacing: isTV ? 40 : 20) {
             VStack {
-                // A button that plays the video in a full-window presentation.
-                Button {
-                    /// Load the media item for full-window presentation.
-                    player.loadVideo(video, presentation: .fullWindow)
-                } label: {
-                    Label("Play Video", systemImage: "play.fill")
-                        .frame(maxWidth: .infinity)
-                }
                 // A button to toggle whether the video is in the user's Up Next queue.
                 Button {
                     // Calling this method toggles the video's inclusion state in the Up Next queue.

@@ -9,15 +9,10 @@ import SwiftUI
 
 extension View {
     #if os(visionOS)
-    func updateImmersionOnChange(of path: Binding<[Video]>, isPresentingSpace: Binding<Bool>) -> some View {
+    func updateImmersionOnChange(of path: Binding<[Space]>, isPresentingSpace: Binding<Bool>) -> some View {
         self.modifier(ImmersiveSpacePresentationModifier(navigationPath: path, isPresentingSpace: isPresentingSpace))
     }
     #endif
-    
-    // Only used in iOS and tvOS for full-screen modal presentation.
-    func fullScreenCoverPlayer(player: PlayerModel) -> some View {
-        self.modifier(FullScreenCoverModifier(player: player))
-    }
 }
 
 #if os(visionOS)
@@ -28,7 +23,7 @@ private struct ImmersiveSpacePresentationModifier: ViewModifier {
     /// The current phase for the scene, which can be active, inactive, or background.
     @Environment(\.scenePhase) private var scenePhase
     
-    @Binding var navigationPath: [Video]
+    @Binding var navigationPath: [Space]
     @Binding var isPresentingSpace: Bool
     
     func body(content: Content) -> some View {
@@ -65,29 +60,3 @@ private struct ImmersiveSpacePresentationModifier: ViewModifier {
     }
 }
 #endif
-
-private struct FullScreenCoverModifier: ViewModifier {
-    
-    let player: PlayerModel
-    @State private var isPresentingPlayer = false
-    
-    func body(content: Content) -> some View {
-        content
-            .fullScreenCover(isPresented: $isPresentingPlayer) {
-                PlayerView()
-                    .onAppear {
-                        player.play()
-                    }
-                    .onDisappear {
-                        player.reset()
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .ignoresSafeArea()
-            }
-            // Observe the player's presentation property.
-            .onChange(of: player.presentation, { _, newPresentation in
-                isPresentingPlayer = newPresentation == .fullWindow
-            })
-    }
-}
-

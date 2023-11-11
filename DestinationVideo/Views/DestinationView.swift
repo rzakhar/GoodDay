@@ -14,9 +14,7 @@ struct DestinationView: View {
     
     @State private var destination: Destination
     @State private var destinationChanged = false
-    
-    @Environment(PlayerModel.self) private var model
-    
+
     init(_ destination: Destination) {
         self.destination = destination
     }
@@ -37,12 +35,6 @@ struct DestinationView: View {
         // Handle the case where the app is already playing video in a destination and:
         // 1. The user opens the Up Next tab and navigates to a new item, or
         // 2. The user presses the "Play Next" button in the player UI.
-        .onChange(of: model.currentItem) { oldValue, newValue in
-            if let newValue, destination != newValue.destination {
-                destination = newValue.destination
-                destinationChanged = true
-            }
-        }
         .transition(.opacity)
     }
 }

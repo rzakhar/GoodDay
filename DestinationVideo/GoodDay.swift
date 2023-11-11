@@ -9,18 +9,15 @@ import SwiftUI
 import os
 
 @main
-struct DestinationVideo: App {
+struct GoodDay: App {
     
-    /// An object that controls the video playback behavior.
-    @State private var player = PlayerModel()
     /// An object that manages the library of video content.
-    @State private var library = VideoLibrary()
+    @State private var library = SpaceLibrary()
     
     var body: some Scene {
         // The app's primary content window.
         WindowGroup {
             ContentView()
-                .environment(player)
                 .environment(library)
             #if !os(visionOS)
                 // Use a dark color scheme on supported platforms.
@@ -33,7 +30,6 @@ struct DestinationVideo: App {
         ImmersiveSpace(for: Destination.self) { $destination in
             if let destination {
                 DestinationView(destination)
-                    .environment(player)
             }
         }
         // Set the immersion style to progressive, so the user can use the crown to dial in their experience.

@@ -7,15 +7,15 @@ Extensions to simplify creating previews.
 
 import Foundation
 
-extension Video {
-    static var preview: Video {
-        VideoLibrary().videos[0]
+extension Space {
+    static var preview: Space {
+        SpaceLibrary().videos[0]
     }
 }
 
 extension Array {
-    static var all: [Video] {
-        VideoLibrary().videos
+    static var all: [Space] {
+        SpaceLibrary().videos
     }
 }
 

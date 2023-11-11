@@ -6,8 +6,8 @@ A view that displays information about a video like its title, actors, and ratin
 */
 import SwiftUI
 
-struct VideoInfoView: View {
-    let video: Video
+struct SpaceInfoView: View {
+    let video: Space
     var body: some View {
         VStack(alignment: .leading) {
             Text(video.title)
@@ -85,7 +85,7 @@ struct RoleView: View {
 
 #if os(visionOS)
 #Preview {
-    VideoInfoView(video: .preview)
+    SpaceInfoView(video: .preview)
         .padding()
         .frame(width: 500, height: 500)
         .background(.gray)

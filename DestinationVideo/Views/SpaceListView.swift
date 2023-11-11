@@ -8,13 +8,13 @@ A list of video cards.
 import SwiftUI
 
 /// A view the presents a horizontally scrollable list of video cards.
-struct VideoListView: View {
+struct SpaceListView: View {
     
-    typealias SelectionAction = (Video) -> Void
+    typealias SelectionAction = (Space) -> Void
 
     private let title: String?
-    private let videos: [Video]
-    private let cardStyle: VideoCardStyle
+    private let videos: [Space]
+    private let cardStyle: SpaceCardView
     private let cardSpacing: Double
 
     private let selectionAction: SelectionAction?
@@ -27,7 +27,7 @@ struct VideoListView: View {
     ///   - cardSpacing: The spacing between cards.
     ///   - selectionAction: An optional action that you can specify to directly handle the card selection.
     ///    When the app doesn't specify a selection action, the view presents the card as a `NavigationLink.
-    init(title: String? = nil, videos: [Video], cardStyle: VideoCardStyle, cardSpacing: Double, selectionAction: SelectionAction? = nil) {
+    init(title: String? = nil, videos: [Space], cardStyle: SpaceCardView, cardSpacing: Double, selectionAction: SelectionAction? = nil) {
         self.title = title
         self.videos = videos
         self.cardStyle = cardStyle
@@ -101,21 +101,21 @@ struct VideoListView: View {
 
 #Preview("Full") {
     NavigationStack {
-        VideoListView(title: "Featured", videos: .all, cardStyle: .full, cardSpacing: 80)
+        SpaceListView(title: "Featured", videos: .all, cardStyle: .full, cardSpacing: 80)
             .frame(height: 380)
     }
 }
 
 #Preview("Up Next") {
     NavigationStack {
-        VideoListView(title: "Up Next", videos: .all, cardStyle: .upNext, cardSpacing: 20)
+        SpaceListView(title: "Up Next", videos: .all, cardStyle: .upNext, cardSpacing: 20)
             .frame(height: 200)
     }
 }
 
 #Preview("Compact") {
     NavigationStack {
-        VideoListView(videos: .all, cardStyle: .compact, cardSpacing: 20)
+        SpaceListView(videos: .all, cardStyle: .compact, cardSpacing: 20)
             .padding()
     }
 }

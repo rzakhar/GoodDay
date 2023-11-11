@@ -15,18 +15,17 @@ import SwiftUI
 ///
 struct LibraryView: View {
     
-    @Environment(PlayerModel.self) private var model
-    @Environment(VideoLibrary.self) private var library
+    @Environment(SpaceLibrary.self) private var library
     
     /// A path that represents the user's content navigation path.
-    @Binding private var navigationPath: [Video]
+    @Binding private var navigationPath: [Space]
     /// A path that represents the user's content navigation path.
     @Binding private var isPresentingSpace: Bool
     
     /// Creates a `LibraryView` with a binding to a selection path.
     ///
     /// The default value is an empty binding.
-    init(path: Binding<[Video]>, isPresentingSpace: Binding<Bool> = .constant(false)) {
+    init(path: Binding<[Space]>, isPresentingSpace: Binding<Bool> = .constant(false)) {
         _navigationPath = path
         _isPresentingSpace = isPresentingSpace
     }
@@ -46,19 +45,19 @@ struct LibraryView: View {
                         .accessibilityHidden(true)
                     
                     // Displays a horizontally scrolling list of Featured videos.
-                    VideoListView(title: "Featured",
+                    SpaceListView(title: "Featured",
                                   videos: library.videos,
                                   cardStyle: .full,
                                   cardSpacing: horizontalSpacing)
                     
                     // Displays a horizontally scrolling list of videos in the user's Up Next queue.
-                    VideoListView(title: "Up Next",
+                    SpaceListView(title: "Up Next",
                                   videos: library.upNext,
                                   cardStyle: .upNext,
                                   cardSpacing: horizontalSpacing)
                 }
                 .padding([.top, .bottom], verticalPadding)
-                .navigationDestination(for: Video.self) { video in
+                .navigationDestination(for: Space.self) { video in
                     DetailView(video: video)
                         .navigationTitle(video.title)
                         .navigationBarHidden(isTV)
@@ -97,7 +96,6 @@ struct LibraryView: View {
 #Preview {
     NavigationStack {
         LibraryView(path: .constant([]))
-            .environment(PlayerModel())
-            .environment(VideoLibrary())
+            .environment(SpaceLibrary())
     }
 }
