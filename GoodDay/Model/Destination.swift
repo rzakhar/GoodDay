@@ -33,7 +33,7 @@ enum Destination: String, CaseIterable, Identifiable, Codable {
         case .lake: -55
         case .grass: 0
         case .park: 190
-        case .church: 180
+        case .church: 90
         }
     }
 }

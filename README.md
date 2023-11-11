@@ -16,8 +16,9 @@ Whether it's the warm embrace of your own home, the familiarity of your communit
 
 *Might take some time to load.* [Open in a new window](demo.gif)
 
-<img src="demo.gif" alt="Demonstration" width="500"/>
+<img src="demo.gif" alt="Demonstration" width="900"/>
 
 ## 📸 Screenshots 
 <img src="main_view.png" alt="Main menu" width="900"/>
-<img src="immersive_scene.png" alt="The Immersive scene" width="900"/>
+<img src="immersive_scene_beach.png" alt="The Immersive scene of a beach" width="900"/>
+<img src="immersive_scene_church.png" alt="The Immersive scene of a church" width="900"/>
