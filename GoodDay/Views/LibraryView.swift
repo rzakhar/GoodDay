@@ -44,8 +44,24 @@ struct LibraryView: View {
                         .frame(height: 34)
                         .accessibilityHidden(true)
                     
-                    // Displays a horizontally scrolling list of Featured spaces.
-                    SpaceListView(title: "Featured",
+
+                    SpaceListView(title: "Early Riser",
+                                  subtitle: "Good morning!",
+                                  spaces: library.morningSpaces,
+                                  cardStyle: .full,
+                                  cardSpacing: 30)
+                    SpaceListView(title: "The Inner Calm",
+                                  subtitle: "Try to lower your heart rate",
+                                  spaces: library.calmSpaces,
+                                  cardStyle: .full,
+                                  cardSpacing: 30)
+                    SpaceListView(title: "Mindful Weekend",
+                                  subtitle: "Your Sundays favorites",
+                                  spaces: library.spiritualSpaces,
+                                  cardStyle: .full,
+                                  cardSpacing: 30)
+                    SpaceListView(title: "All Spaces",
+                                  subtitle: "The whole Good Day library",
                                   spaces: library.spaces,
                                   cardStyle: .full,
                                   cardSpacing: 30)

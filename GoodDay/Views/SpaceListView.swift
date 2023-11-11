@@ -13,6 +13,7 @@ struct SpaceListView: View {
     typealias SelectionAction = (Space) -> Void
 
     private let title: String?
+    private let subtitle: String?
     private let spaces: [Space]
     private let cardStyle: SpaceCardView
     private let cardSpacing: Double
@@ -27,8 +28,9 @@ struct SpaceListView: View {
     ///   - cardSpacing: The spacing between cards.
     ///   - selectionAction: An optional action that you can specify to directly handle the card selection.
     ///    When the app doesn't specify a selection action, the view presents the card as a `NavigationLink.
-    init(title: String? = nil, spaces: [Space], cardStyle: SpaceCardView, cardSpacing: Double, selectionAction: SelectionAction? = nil) {
+    init(title: String? = nil, subtitle: String? = nil, spaces: [Space], cardStyle: SpaceCardView, cardSpacing: Double, selectionAction: SelectionAction? = nil) {
         self.title = title
+        self.subtitle = subtitle
         self.spaces = spaces
         self.cardStyle = cardStyle
         self.cardSpacing = cardSpacing
@@ -37,9 +39,15 @@ struct SpaceListView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            titleView
-                .padding(.leading, 30)
-                .padding(.bottom, 12)
+            Group {
+                titleView
+                if let subtitle {
+                    Text(subtitle)
+                        .font(.title2)
+                }
+            }
+            .padding(.leading, 30)
+            .padding(.bottom, 12)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: cardSpacing) {
                     ForEach(spaces) { space in

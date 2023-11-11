@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "title": "A Beach",
+        "title": "The Beach",
         "image_name": "beach",
-        "description": "From an award-winning producer and actor, \"A Beach\" is a sweeping, awe-inspiring drama depicting waves crashing on a scenic California beach. Sit back and enjoy the sweet sounds of the ocean while relaxing on a soft, sandy beach.",
+        "description": "The Beach is a sweeping, awe-inspiring scene depicting waves crashing on a California beach. Sit back and enjoy while relaxing on a soft, sandy beach.",
         "destination": "beach",
         "info": {
-            "tags": ["Drama", "Romance"],
+            "tags": ["Nature", "Calm"],
         }
     },
     {
@@ -16,28 +16,28 @@
         "description": "The battle for the sunniest spot continues, as a group of turtles take their positions on the log. Find out who the last survivor is, and who must swim away cold.",
         "destination": "lake",
         "info": {
-            "tags": ["Comedy", "Action"],
+            "tags": ["Nature", "Action"],
         }
     },
     {
         "id": 3,
         "title": "Camping in the Woods",
         "image_name": "camping",
-        "description": "Come along for a journey of epic proportion as the perfect camp site is discovered. Listen to the magical wildlife and feel the gentle breeze of the wind as you watch the daisies dance in the field of flowers.",
+        "description": "Come along for a journey as the perfect camp site is discovered. Feel the gentle breeze of the wind as you watch the daisies dance in the field of flowers.",
         "destination": "camping",
         "info": {
-            "tags": ["Action", "Adventure"],
+            "tags": ["Nature", "Action"],
         }
     },
 
     {
         "id": 4,
-        "title": "Birds in the Park",
+        "title": "California Park",
         "image_name": "park",
-        "description": "On a dreamy spring day near the California hillside, some friendly little birds flutter about, hopping from stalk to stalk munching on some tasty seeds. Listen to them chatter as they go about their busy afternoon.",
+        "description": "On a dreamy spring day near the California hillside, some friendly little birds flutter about, hopping from stalk to stalk munching on some tasty seeds.",
         "destination": "park",
         "info": {
-            "tags": ["Documentary"],
+            "tags": ["Nature"],
         }
     },
     {
@@ -47,7 +47,7 @@
         "description": "A mystery is brewing on a rainy Wednesday in California, as a couple of friends head to a local campsite for a weekend in the woods. They never anticipated what could be living down by the trickling, rocky creek.",
         "destination": "creek",
         "info": {
-            "tags": ["Mystery"],
+            "tags": ["Nature"],
         }
     },
     {
@@ -57,7 +57,7 @@
         "description": "Discover the beauty beyond the highway, just steps away from your normal commute. What lies beyond is a stunning show of delicate fog rolling over the hillside.",
         "destination": "hillside",
         "info": {
-            "tags": ["Romance", "Drama"],
+            "tags": ["Nature", "Drama"],
         }
     },
     {
@@ -67,7 +67,7 @@
         "description": "Experience the great flight of a black beetle, as it crawls along a giant rock near the lake preparing for takeoff. Where it will go, nobody knows!",
         "destination": "ocean",
         "info": {
-            "tags": ["Comedy", "Action"],
+            "tags": ["Nature", "Action"],
         }
     }
 ]

@@ -16,6 +16,9 @@ import Observation
 @Observable class SpaceLibrary {
     
     private(set) var spaces = [Space]()
+    private(set) var morningSpaces = [Space]()
+    private(set) var calmSpaces = [Space]()
+    private(set) var spiritualSpaces = [Space]()
     private(set) var favorites = [Space]()
     
     // A URL within the user's Documents directory to which to write their Favorites entries.
@@ -24,6 +27,9 @@ import Observation
     init() {
         // Load all spaces available in the library.
         spaces = loadspaces()
+        morningSpaces = loadMorningSpaces()
+        calmSpaces = loadCalmSpaces()
+        spiritualSpaces = loadSpiritualSpaces()
         // The first time the app launches, set the last three spaces as the default Favorites items.
         favorites = loadFavoriteSpaces(default: Array(spaces.suffix(3)))
     }
@@ -102,7 +108,22 @@ import Observation
         let ids: [Int] = load(favoritesURL)
         return spaces.filter { ids.contains($0.id) }
     }
-    
+
+    private func loadMorningSpaces() -> [Space] {
+        let ids: [Int] = [1, 2, 3]
+        return spaces.filter { ids.contains($0.id) }
+    }
+
+    private func loadCalmSpaces() -> [Space] {
+        let ids: [Int] = [4, 5]
+        return spaces.filter { ids.contains($0.id) }
+    }
+
+    private func loadSpiritualSpaces() -> [Space] {
+        let ids: [Int] = [6, 7, 8]
+        return spaces.filter { ids.contains($0.id) }
+    }
+
     /// Saves the Favorites data to disk.
     ///
     /// The app saves the state using simple JSON persistence.
