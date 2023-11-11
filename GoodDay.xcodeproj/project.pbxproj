@@ -153,10 +153,10 @@
 		C455358829EEFE3100A750E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C49898EE2A02CE4400B468DC /* Destination.swift */,
 				C455358B29EEFE3100A750E8 /* Space.swift */,
 				C455358929EEFE3100A750E8 /* SpaceLibrary.swift */,
 				C4BFEB652A13FFDB0029E58F /* Spaces.json */,
-				C49898EE2A02CE4400B468DC /* Destination.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +164,7 @@
 		C455358E29EEFE3100A750E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3083286D2AFFD52600CCCE2F /* BeatingHeart.swift */,
 				C4EF19B92A1A902D00B0521E /* DetailView.swift */,
 				C455357629EEFE3100A750E8 /* DestinationView.swift */,
 				C455359429EEFE3100A750E8 /* LibraryView.swift */,
@@ -171,7 +172,6 @@
 				C455359029EEFE3100A750E8 /* SpaceCardView.swift */,
 				C455359129EEFE3100A750E8 /* SpaceInfoView.swift */,
 				C4F89F6D2A196C9E00240F25 /* ViewModifiers.swift */,
-				3083286D2AFFD52600CCCE2F /* BeatingHeart.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

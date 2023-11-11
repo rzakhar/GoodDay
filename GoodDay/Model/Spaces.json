@@ -62,10 +62,10 @@
     },
     {
         "id": 7,
-        "title": "Ocean Breeze",
-        "image_name": "ocean",
+        "title": "Grass Ocean",
+        "image_name": "grass",
         "description": "Experience the great flight of a black beetle, as it crawls along a giant rock near the lake preparing for takeoff. Where it will go, nobody knows!",
-        "destination": "ocean",
+        "destination": "grass",
         "info": {
             "tags": ["Nature", "Action"],
         }

@@ -14,7 +14,7 @@ enum Destination: String, CaseIterable, Identifiable, Codable {
     case creek
     case hillside
     case lake
-    case ocean
+    case grass
     case park
     case church
 
@@ -31,7 +31,7 @@ enum Destination: String, CaseIterable, Identifiable, Codable {
         case .creek: 0
         case .hillside: 0
         case .lake: -55
-        case .ocean: 0
+        case .grass: 0
         case .park: 190
         case .church: 180
         }

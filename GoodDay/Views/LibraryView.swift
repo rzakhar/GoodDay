@@ -36,14 +36,20 @@ struct LibraryView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 30) {
                     // Displays the Good Day logo image.
-                    Image("dv_logo")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(.leading, 30)
-                        .padding(.bottom, 8)
-                        .frame(height: 34)
-                        .accessibilityHidden(true)
-                    
+                    LinearGradient(
+                        colors: [.orange, .blue],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                    .frame(width:300, height: 50)
+                    .mask(
+                        Text("Good Day")
+                            .font(Font.system(size: 46, weight: .bold))
+                            .multilineTextAlignment(.center)
+                    )
+                    .shadow(radius: 10)
+
+
 
                     SpaceListView(title: "Early Riser",
                                   subtitle: "Good morning!",

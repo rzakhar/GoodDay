@@ -26,7 +26,7 @@ import Observation
     
     init() {
         // Load all spaces available in the library.
-        spaces = loadspaces()
+        spaces = loadspaces().shuffled()
         morningSpaces = loadMorningSpaces()
         calmSpaces = loadCalmSpaces()
         spiritualSpaces = loadSpiritualSpaces()
