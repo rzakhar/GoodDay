@@ -71,6 +71,10 @@ struct LibraryView: View {
         // A custom view modifier that presents an immersive space when you navigate to the detail view.
         .updateImmersionOnChange(of: $navigationPath, isPresentingSpace: $isPresentingSpace)
         #endif
+        .overlay(alignment: .topTrailing) {
+            BeatingHeart()
+                .padding(.all, 30)
+        }
     }
 
     // MARK: - Platform-specific metrics.

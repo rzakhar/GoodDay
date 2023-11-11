@@ -25,7 +25,7 @@ import Observation
         // Load all spaces available in the library.
         spaces = loadspaces()
         // The first time the app launches, set the last three spaces as the default Favorites items.
-        vaforites = loadFavoritespaces(default: Array(spaces.suffix(3)))
+        vaforites = loadFavoriteSpaces(`default`: Array(spaces.suffix(3)))
     }
     
     /// Toggles whether the space exists in the Favorites queue.
@@ -90,7 +90,7 @@ import Observation
     }
     
     /// Loads the user's list of spaces in their Favorites list.
-    private func loadFavoritespaces(`default` defaultspaces: [Space]) -> [Space] {
+    private func loadFavoriteSpaces(`default` defaultspaces: [Space]) -> [Space] {
         // If this file doesn't exist, create it.
         if !FileManager.default.fileExists(atPath: vaforitesURL.path) {
             // Create an initial file with a default value.
