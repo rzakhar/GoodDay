@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C4462E7029AAAB2E00E3C854"
-               BuildableName = "Destination Video.app"
+               BuildableName = "Good Day.app"
                BlueprintName = "GoodDay"
                ReferencedContainer = "container:GoodDay.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4462E7029AAAB2E00E3C854"
-            BuildableName = "Destination Video.app"
+            BuildableName = "Good Day.app"
             BlueprintName = "GoodDay"
             ReferencedContainer = "container:GoodDay.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C4462E7029AAAB2E00E3C854"
-            BuildableName = "Destination Video.app"
+            BuildableName = "Good Day.app"
             BlueprintName = "GoodDay"
             ReferencedContainer = "container:GoodDay.xcodeproj">
          </BuildableReference>

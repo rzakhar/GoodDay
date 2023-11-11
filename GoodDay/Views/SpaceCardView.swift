@@ -12,27 +12,20 @@ enum SpaceCardView {
     /// A full space card style.
     ///
     /// This style presents a poster image on top and information about the space
-    /// below, including space description and genres.
+    /// below, including space description and tags.
     case full
 
     /// A style for cards in the Favorites list.
     ///
     /// This style presents a medium-sized poster image on top and a title string below.
-    case vaforites
-    
-    /// A compact space card style.
-    ///
-    /// This style presents a compact-sized poster image on top and a title string below.
-    case compact
-    
+    case favorites
+
     var cornerRadius: Double {
         switch self {
         case .full: 20.0
-        case .vaforites: 12.0
-        case .compact: 10.0
+        case .favorites: 12.0
         }
     }
-
 }
 
 /// A view that represents a space in the library.
@@ -60,31 +53,20 @@ struct spaceCardView: View {
 
     var body: some View {
         switch style {
-        case .compact:
-            posterCard
-                .frame(width: 200)
-        case .vaforites:
+        case .favorites:
             posterCard
                 .frame(width: 360)
         case .full:
             VStack {
                 image
                 VStack(alignment: .leading) {
-                    InfoLineView(year: space.info.releaseYear,
-                                 rating: space.info.contentRating,
-                                 duration: space.info.duration)
-                    .foregroundStyle(.secondary)
-                    .padding(.top, -10)
-                    //.padding(.bottom, 3)
                     Text(space.title)
                         .font(.title)
-                        //.padding(.bottom, 2)
                     Text(space.description)
-
                         .lineLimit(2)
                     Spacer()
                     HStack {
-                        GenreView(genres: space.info.genres)
+                        GenreView(tags: space.info.tags)
                     }
                 }
                 .padding(20)

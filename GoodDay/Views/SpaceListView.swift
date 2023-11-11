@@ -89,14 +89,7 @@ struct SpaceListView: View {
 
 #Preview("Favorites") {
     NavigationStack {
-        SpaceListView(title: "Favorites", spaces: .all, cardStyle: .vaforites, cardSpacing: 20)
+        SpaceListView(title: "Favorites", spaces: .all, cardStyle: .favorites, cardSpacing: 20)
             .frame(height: 200)
-    }
-}
-
-#Preview("Compact") {
-    NavigationStack {
-        SpaceListView(spaces: .all, cardStyle: .compact, cardSpacing: 20)
-            .padding()
     }
 }

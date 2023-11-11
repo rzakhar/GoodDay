@@ -13,19 +13,9 @@ struct SpaceInfoView: View {
             Text(space.title)
                 .font(.title)
                 .padding(.bottom, 4)
-            InfoLineView(year: space.info.releaseYear,
-                         rating: space.info.contentRating,
-                         duration: space.info.duration)
                 .padding([.bottom], 4)
-            GenreView(genres: space.info.genres)
+            GenreView(tags: space.info.tags)
                 .padding(.bottom, 4)
-            RoleView(role: String(localized: "Stars"), people: space.info.stars)
-                .padding(.top, 1)
-            RoleView(role: String(localized: "Director"), people: space.info.directors)
-                .padding(.top, 1)
-            RoleView(role: String(localized: "Writers"), people: space.info.writers)
-                .padding(.top, 1)
-                .padding(.bottom, 12)
             Text(space.description)
                 .font(.headline)
                 .padding(.bottom, 12)
@@ -33,25 +23,12 @@ struct SpaceInfoView: View {
     }
 }
 
-/// A view that displays a horizontal list of the space's year, rating, and duration.
-struct InfoLineView: View {
-    let year: String
-    let rating: String
-    let duration: String
-    var body: some View {
-        HStack {
-            Text("\(year) | \(rating) | \(duration)")
-                .font(.subheadline.weight(.medium))
-        }
-    }
-}
-
-/// A view that displays a comma-separated list of genres for a space.
+/// A view that displays a comma-separated list of tags for a space.
 struct GenreView: View {
-    let genres: [String]
+    let tags: [String]
     var body: some View {
         HStack(spacing: 8) {
-            ForEach(genres, id: \.self) {
+            ForEach(tags, id: \.self) {
                 Text($0)
                     .fixedSize()
                     .font(.caption2.weight(.bold))

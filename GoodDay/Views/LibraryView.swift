@@ -52,8 +52,8 @@ struct LibraryView: View {
 
                     // Displays a horizontally scrolling list of spaces in the user's Favorites queue.
                     SpaceListView(title: "Favorites",
-                                  spaces: library.vaforites,
-                                  cardStyle: .vaforites,
+                                  spaces: library.favorites,
+                                  cardStyle: .favorites,
                                   cardSpacing: 30)
                 }
                 .padding([.top, .bottom], 30)

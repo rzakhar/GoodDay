@@ -16,27 +16,27 @@ import Observation
 @Observable class SpaceLibrary {
     
     private(set) var spaces = [Space]()
-    private(set) var vaforites = [Space]()
+    private(set) var favorites = [Space]()
     
     // A URL within the user's Documents directory to which to write their Favorites entries.
-    private let vaforitesURL = URL.documentsDirectory.appendingPathComponent("Favorite.json")
+    private let favoritesURL = URL.documentsDirectory.appendingPathComponent("Favorite.json")
     
     init() {
         // Load all spaces available in the library.
         spaces = loadspaces()
         // The first time the app launches, set the last three spaces as the default Favorites items.
-        vaforites = loadFavoriteSpaces(`default`: Array(spaces.suffix(3)))
+        favorites = loadFavoriteSpaces(default: Array(spaces.suffix(3)))
     }
     
     /// Toggles whether the space exists in the Favorites queue.
     /// - Parameter space: the space to update
     func toggleFavoriteState(for space: Space) {
-        if !vaforites.contains(space) {
+        if !favorites.contains(space) {
             // Insert the space at the beginning of the list.
-            vaforites.insert(space, at: 0)
+            favorites.insert(space, at: 0)
         } else {
             // Remove the entry with the matching identifier.
-            vaforites.removeAll(where: { $0.id == space.id })
+            favorites.removeAll(where: { $0.id == space.id })
         }
         // Persist the Favorites state to disk.
         saveFavorite()
@@ -46,37 +46,37 @@ import Observation
     /// - Parameter space: the space to test,
     /// - Returns: `true` if the item is in the Favorites list; otherwise, `false`.
     func isspaceInFavorite(_ space: Space) -> Bool {
-        vaforites.contains(space)
+        favorites.contains(space)
     }
     
     /// Finds the items to display in the space player's Favorites list.
     func findFavorite(for space: Space) -> [Space] {
-        vaforites.filter { $0.id != space.id }
+        favorites.filter { $0.id != space.id }
     }
     
     /// Finds the next space in the Favorites list after the current space.
     /// - Parameter space: the current space
     /// - Returns: the next space, or `nil` if none exists.
     func findspaceInFavorite(after space: Space) -> Space? {
-        switch vaforites.count {
+        switch favorites.count {
         case 0:
             // Favorites is empty. Return nil.
             return nil
         case 1:
-            // The passed in space is the only item in `vaforites`, return nil.
-            if vaforites.first == space {
+            // The passed in space is the only item in `favorites`, return nil.
+            if favorites.first == space {
                 return nil
             } else {
                 // Return the only item.
-                return vaforites.first
+                return favorites.first
             }
         default:
-            // Find the index of the passed in space. If the space isn't in `vaforites`, start at the first item.
-            let spaceIndex = vaforites.firstIndex(of: space) ?? 0
-            if spaceIndex < vaforites.count - 1 {
-                return vaforites[spaceIndex + 1]
+            // Find the index of the passed in space. If the space isn't in `favorites`, start at the first item.
+            let spaceIndex = favorites.firstIndex(of: space) ?? 0
+            if spaceIndex < favorites.count - 1 {
+                return favorites[spaceIndex + 1]
             }
-            return vaforites[0]
+            return favorites[0]
         }
     }
     
@@ -92,14 +92,14 @@ import Observation
     /// Loads the user's list of spaces in their Favorites list.
     private func loadFavoriteSpaces(`default` defaultspaces: [Space]) -> [Space] {
         // If this file doesn't exist, create it.
-        if !FileManager.default.fileExists(atPath: vaforitesURL.path) {
+        if !FileManager.default.fileExists(atPath: favoritesURL.path) {
             // Create an initial file with a default value.
-            if !FileManager.default.createFile(atPath: vaforitesURL.path, contents: "\(defaultspaces.map { $0.id })".data(using: .utf8)) {
+            if !FileManager.default.createFile(atPath: favoritesURL.path, contents: "\(defaultspaces.map { $0.id })".data(using: .utf8)) {
                 fatalError("Couldn't initialize Favorites store.")
             }
         }
         // Load the ids of the spaces in the list.
-        let ids: [Int] = load(vaforitesURL)
+        let ids: [Int] = load(favoritesURL)
         return spaces.filter { ids.contains($0.id) }
     }
     
@@ -111,8 +111,8 @@ import Observation
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             // Persist the ids only.
-            let data = try encoder.encode(vaforites.map { $0.id })
-            try data.write(to: vaforitesURL)
+            let data = try encoder.encode(favorites.map { $0.id })
+            try data.write(to: favoritesURL)
         } catch {
             logger.error("Unable to save JSON data.")
         }
