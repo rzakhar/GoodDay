@@ -19,13 +19,10 @@ struct GoodDay: App {
         WindowGroup {
             ContentView()
                 .environment(library)
-            #if !os(visionOS)
                 // Use a dark color scheme on supported platforms.
                 .preferredColorScheme(.dark)
                 .tint(.white)
-            #endif
         }
-        #if os(visionOS)
         // Defines an immersive space to present a destination in which to watch the space.
         ImmersiveSpace(for: Destination.self) { $destination in
             if let destination {
@@ -34,7 +31,6 @@ struct GoodDay: App {
         }
         // Set the immersion style to progressive, so the user can use the crown to dial in their experience.
         .immersionStyle(selection: .constant(.progressive), in: .progressive)
-        #endif
     }
 }
 

@@ -38,8 +38,8 @@ struct SpaceListView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             titleView
-                .padding(.leading, margins)
-                .padding(.bottom, valueFor(iOS: 8, tvOS: -40, visionOS: 12))
+                .padding(.leading, 30)
+                .padding(.bottom, 12)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: cardSpacing) {
                     ForEach(spaces) { space in
@@ -63,10 +63,9 @@ struct SpaceListView: View {
                         .accessibilityLabel("\(space.title)")
                     }
                 }
-                .buttonStyle(buttonStyle)
-                // In tvOS, add vertical padding to accommodate card resizing.
-                .padding([.top, .bottom], isTV ? 60 : 0)
-                .padding([.leading, .trailing], margins)
+                .buttonStyle(.plain)
+                .padding([.top, .bottom], 0)
+                .padding([.leading, .trailing], 30)
             }
         }
     }
@@ -75,27 +74,9 @@ struct SpaceListView: View {
     var titleView: some View {
         if let title {
             Text(title)
-            #if os(visionOS)
                 .font(cardStyle == .full ? .largeTitle : .title)
-            #elseif os(tvOS)
-                .font(cardStyle == .full ? .largeTitle.weight(.semibold) : .title2)
-            #else
-                .font(cardStyle == .full ? .title2.bold() : .title3.bold())
-            #endif
-            
+
         }
-    }
-    
-    var buttonStyle: some PrimitiveButtonStyle {
-        #if os(tvOS)
-        .card
-        #else
-        .plain
-        #endif
-    }
-    
-    var margins: Double {
-        valueFor(iOS: 20, tvOS: 50, visionOS: 30)
     }
 }
 

@@ -8,14 +8,11 @@ Custom view modifiers that the app defines.
 import SwiftUI
 
 extension View {
-    #if os(visionOS)
     func updateImmersionOnChange(of path: Binding<[Space]>, isPresentingSpace: Binding<Bool>) -> some View {
         self.modifier(ImmersiveSpacePresentationModifier(navigationPath: path, isPresentingSpace: isPresentingSpace))
     }
-    #endif
 }
 
-#if os(visionOS)
 private struct ImmersiveSpacePresentationModifier: ViewModifier {
     
     @Environment(\.openImmersiveSpace) private var openSpace
@@ -59,4 +56,3 @@ private struct ImmersiveSpacePresentationModifier: ViewModifier {
             }
     }
 }
-#endif

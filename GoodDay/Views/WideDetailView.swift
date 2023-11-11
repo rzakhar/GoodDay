@@ -8,8 +8,6 @@ A view that display space detail in a wide layout.
 import SwiftUI
 
 /// A view that displays action controls and space detail in a horizontal layout.
-///
-/// The detail view in iPadOS and tvOS use this view to display the space information.
 struct WideDetailView: View {
     
     let space: Space
@@ -17,7 +15,7 @@ struct WideDetailView: View {
     
     var body: some View {
         // Arrange the content in a horizontal layout.
-        HStack(alignment: .top, spacing: isTV ? 40 : 20) {
+        HStack(alignment: .top, spacing: 20) {
             VStack {
                 // A button to toggle whether the space is in the user's Favorites queue.
                 Button {
@@ -34,7 +32,7 @@ struct WideDetailView: View {
             .fontWeight(.semibold)
             .foregroundStyle(.black)
             .buttonStyle(.borderedProminent)
-            .frame(width: isTV ? 400 : 200)
+            .frame(width: 200)
             // Make the buttons the same width.
             .fixedSize(horizontal: true, vertical: false)
             
@@ -47,8 +45,8 @@ struct WideDetailView: View {
             }
             
         }
-        .frame(height: isTV ? 300 : 150)
-        .padding([.leading, .trailing], isTV ? 80 : 40)
+        .frame(height: 150)
+        .padding([.leading, .trailing], 40)
         .padding(.bottom, 20)
     }
 }

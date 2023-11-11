@@ -11,7 +11,7 @@ struct SpaceInfoView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(space.title)
-                .font(isVision ? .title : .title2)
+                .font(.title)
                 .padding(.bottom, 4)
             InfoLineView(year: space.info.releaseYear,
                          rating: space.info.contentRating,
@@ -41,7 +41,7 @@ struct InfoLineView: View {
     var body: some View {
         HStack {
             Text("\(year) | \(rating) | \(duration)")
-                .font(isTV ? .caption : .subheadline.weight(.medium))
+                .font(.subheadline.weight(.medium))
         }
     }
 }
@@ -54,12 +54,8 @@ struct GenreView: View {
             ForEach(genres, id: \.self) {
                 Text($0)
                     .fixedSize()
-                #if os(visionOS)
                     .font(.caption2.weight(.bold))
-                #else
-                    .font(.caption)
-                #endif
-                    .padding([.leading, .trailing], isTV ? 8: 4)
+                    .padding([.leading, .trailing], 4)
                     .padding([.top, .bottom], 4)
                     .background(RoundedRectangle(cornerRadius: 5).stroke())
                     .foregroundStyle(.secondary)
@@ -83,7 +79,6 @@ struct RoleView: View {
     }
 }
 
-#if os(visionOS)
 #Preview {
     SpaceInfoView(space: .preview)
         .padding()
@@ -91,4 +86,3 @@ struct RoleView: View {
         .background(.gray)
         .previewLayout(.sizeThatFits)
 }
-#endif

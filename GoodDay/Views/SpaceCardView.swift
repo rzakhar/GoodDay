@@ -27,13 +27,7 @@ enum SpaceCardView {
     
     var cornerRadius: Double {
         switch self {
-        case .full:
-            #if os(tvOS)
-            12.0
-            #else
-            20.0
-            #endif
-            
+        case .full: 20.0
         case .vaforites: 12.0
         case .compact: 10.0
         }
@@ -68,10 +62,10 @@ struct spaceCardView: View {
         switch style {
         case .compact:
             posterCard
-                .frame(width: valueFor(iOS: 0, tvOS: 400, visionOS: 200))
+                .frame(width: 200)
         case .vaforites:
             posterCard
-                .frame(width: valueFor(iOS: 250, tvOS: 500, visionOS: 360))
+                .frame(width: 360)
         case .full:
             VStack {
                 image
@@ -83,12 +77,10 @@ struct spaceCardView: View {
                     .padding(.top, -10)
                     //.padding(.bottom, 3)
                     Text(space.title)
-                        .font(isTV ? .title3 : .title)
+                        .font(.title)
                         //.padding(.bottom, 2)
                     Text(space.description)
-                    #if os(tvOS)
-                        .font(.callout)
-                    #endif
+
                         .lineLimit(2)
                     Spacer()
                     HStack {
@@ -98,38 +90,22 @@ struct spaceCardView: View {
                 .padding(20)
             }
             .background(.thinMaterial)
-            #if os(tvOS)
-            .frame(width: 550, height: 590)
-            #else
-            .frame(width: isVision ? 395 : 300)
+            .frame(width: 395)
             .shadow(radius: 5)
             .hoverEffect()
-            #endif
             .cornerRadius(style.cornerRadius)
         }
     }
     
     @ViewBuilder
     var posterCard: some View {
-        #if os(tvOS)
-        ZStack(alignment: .bottom) {
-            image
-            // Material gradient
-            GradientView(style: .ultraThinMaterial, height: 90, startPoint: .top)
-            Text(space.title)
-                .font(.caption.bold())
-                .padding()
-        }
-        .cornerRadius(style.cornerRadius)
-        #else
         VStack {
             image
                 .cornerRadius(style.cornerRadius)
             Text(space.title)
-                .font(isVision ? .title3 : .headline)
+                .font(.title3)
                 .lineLimit(1)
         }
         .hoverEffect()
-        #endif
     }
 }

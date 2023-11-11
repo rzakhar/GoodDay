@@ -34,66 +34,41 @@ struct LibraryView: View {
         NavigationStack(path: $navigationPath) {
             // Wrap the content in a vertically scrolling view.
             ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: verticalPadding) {
+                VStack(alignment: .leading, spacing: 30) {
                     // Displays the Good Day logo image.
                     Image("dv_logo")
                         .resizable()
                         .scaledToFit()
-                        .padding(.leading, outerPadding)
-                        .padding(.bottom, isMobile ? 0 : 8)
-                        .frame(height: logoHeight)
+                        .padding(.leading, 30)
+                        .padding(.bottom, 8)
+                        .frame(height: 34)
                         .accessibilityHidden(true)
                     
                     // Displays a horizontally scrolling list of Featured spaces.
                     SpaceListView(title: "Featured",
                                   spaces: library.spaces,
                                   cardStyle: .full,
-                                  cardSpacing: horizontalSpacing)
-                    
+                                  cardSpacing: 30)
+
                     // Displays a horizontally scrolling list of spaces in the user's Favorites queue.
                     SpaceListView(title: "Favorites",
                                   spaces: library.vaforites,
                                   cardStyle: .vaforites,
-                                  cardSpacing: horizontalSpacing)
+                                  cardSpacing: 30)
                 }
-                .padding([.top, .bottom], verticalPadding)
+                .padding([.top, .bottom], 30)
                 .navigationDestination(for: Space.self) { space in
                     DetailView(space: space)
                         .navigationTitle(space.title)
-                        .navigationBarHidden(isTV)
                 }
             }
-            #if os(tvOS)
-            .ignoresSafeArea()
-            #endif
         }
-        #if os(visionOS)
         // A custom view modifier that presents an immersive space when you navigate to the detail view.
         .updateImmersionOnChange(of: $navigationPath, isPresentingSpace: $isPresentingSpace)
-        #endif
         .overlay(alignment: .topTrailing) {
             BeatingHeart()
                 .padding(.all, 30)
         }
-    }
-
-    // MARK: - Platform-specific metrics.
-    
-    /// The vertical padding between views.
-    var verticalPadding: Double {
-        valueFor(iOS: 30, tvOS: 40, visionOS: 30)
-    }
-    
-    var outerPadding: Double {
-        valueFor(iOS: 20, tvOS: 50, visionOS: 30)
-    }
-    
-    var horizontalSpacing: Double {
-        valueFor(iOS: 20, tvOS: 80, visionOS: 30)
-    }
-    
-    var logoHeight: Double {
-        valueFor(iOS: 24, tvOS: 60, visionOS: 34)
     }
 }
 
