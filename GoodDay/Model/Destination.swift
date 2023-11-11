@@ -16,7 +16,8 @@ enum Destination: String, CaseIterable, Identifiable, Codable {
     case lake
     case ocean
     case park
-    
+    case church
+
     var id: Self { self }
     
     /// The environment image to load.
@@ -32,6 +33,7 @@ enum Destination: String, CaseIterable, Identifiable, Codable {
         case .lake: -55
         case .ocean: 0
         case .park: 190
+        case .church: 180
         }
     }
 }

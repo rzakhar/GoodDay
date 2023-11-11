@@ -115,12 +115,12 @@ import Observation
     }
 
     private func loadCalmSpaces() -> [Space] {
-        let ids: [Int] = [4, 5]
+        let ids: [Int] = [4, 5, 6, 7]
         return spaces.filter { ids.contains($0.id) }
     }
 
     private func loadSpiritualSpaces() -> [Space] {
-        let ids: [Int] = [6, 7, 8]
+        let ids: [Int] = [8]
         return spaces.filter { ids.contains($0.id) }
     }
 

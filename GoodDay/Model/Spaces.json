@@ -69,6 +69,16 @@
         "info": {
             "tags": ["Nature", "Action"],
         }
+    },
+    {
+        "id": 8,
+        "title": "St Andrew's Presbyterian Canberra",
+        "image_name": "church",
+        "description": "St. Andrew's Presbyterian Church in Canberra stands as a welcoming spiritual haven in the heart of the city. ",
+        "destination": "church",
+        "info": {
+            "tags": ["Nature", "Spiritual"],
+        }
     }
 ]
 
