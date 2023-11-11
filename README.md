@@ -1,12 +1,23 @@
-# GoodDay
+# 🌟 Good Day App 🌈
 
-**Alleviate the pain in palliative care.**
+**Alleviate the pain in palliative care. 🌷**
 
-GoodDay is an immersive experience aiming at making palliative care patients as comfortable as possible. It allows to travel safely to your favorite place on Earth. 
+Good Day is an immersive experience dedicated to making palliative care patients as comfortable as possible. It allows you to embark on a safe journey to your favorite place on Earth.
 
-Whether it's the familiarity of your own home, your community space, or a place connected with your special memory, GoodDay allows you to stay close to it.  
+Whether it's the warm embrace of your own home, the familiarity of your community space, or a location intertwined with a special memory, Good Day lets you stay close to it.
 
-This app utilises visionOS technology and can be combined with pictures taken by your smartphone. 
+## 🚀 Main Features
+* Runs seamlessly on Apple Vision Pro and later 🍏
+* 100% Swift + SwiftUI 🚀
+* Add your cherished scenes to favorites or explore curated categories 🖼️
+* Utilize a digital crown to step into the immersive scenes 🔄
 
-For more information about the app and how it works, see
-[Destination Video](https://developer.apple.com/documentation/visionos/destination-video) in the developer documentation.
+## 🎥 Demo
+
+*Might take some time to load.* [Open in a new window](demo.gif)
+
+<img src="demo.gif" alt="Demonstration" width="500"/>
+
+## 📸 Screenshots 
+<img src="main_view.png" alt="Main menu" width="900"/>
+<img src="immersive_scene.png" alt="The Immersive scene" width="900"/>
