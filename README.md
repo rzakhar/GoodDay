@@ -14,6 +14,8 @@ Whether it's the warm embrace of your own home, the familiarity of your communit
 
 ## 🎥 Demo
 
+YouTube Link: https://youtu.be/McYq6zQ4XzY
+
 *Might take some time to load.* [Open in a new window](demo.gif)
 
 <img src="demo.gif" alt="Demonstration" width="900"/>
